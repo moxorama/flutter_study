@@ -1,16 +1,6 @@
-# Flutter kfc
+# KFC flutter
 
-A new Flutter project.
+Trying to reproduce some of KFC app screens with Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- No api integration
+- Some UI modifications for iOS look and feel. I'm not trying to do Material design app.
