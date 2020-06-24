@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
           tabBar: CupertinoTabBar(
             inactiveColor: Colors.black,
             activeColor: Colors.red,
+            backgroundColor: Colors.white,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.home),

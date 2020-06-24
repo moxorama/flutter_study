@@ -63,6 +63,7 @@ class _CategoriesListState extends State<CategoriesList> {
         });
         scrollTo(index);
       },
+
       child: Padding(
         padding: const EdgeInsets.only(top: 18, left: 8, right: 8, bottom: 0),
         child: Text(
@@ -81,7 +82,7 @@ class _CategoriesListState extends State<CategoriesList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 42,
+        height: 46,
         child: ScrollablePositionedList.builder(
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,
