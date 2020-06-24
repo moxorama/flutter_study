@@ -1,4 +1,4 @@
-# kfc
+# Flutter kfc
 
 A new Flutter project.
 
