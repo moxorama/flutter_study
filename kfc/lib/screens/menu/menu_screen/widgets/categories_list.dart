@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class CategoriesList extends StatefulWidget {
-  CategoriesList({Key key}) : super(key: key);
+  var onCategorySelected;
+
+  CategoriesList({Key key, this.onCategorySelected}) : super(key: key);
 
   @override
   _CategoriesListState createState() => _CategoriesListState();
@@ -42,11 +44,17 @@ class _CategoriesListState extends State<CategoriesList> {
       }
 
       if (index == (categories.length - 1)) {
-        alignment = 0.8;
+        alignment = 0.7;
       }
 
       return alignment;
     }
+
+    setState(() {
+      selectedCategory = index;
+    });
+
+    widget.onCategorySelected(index);
 
     itemScrollController.scrollTo(
         index: index,
@@ -63,16 +71,25 @@ class _CategoriesListState extends State<CategoriesList> {
         });
         scrollTo(index);
       },
-
       child: Padding(
-        padding: const EdgeInsets.only(top: 18, left: 8, right: 8, bottom: 0),
-        child: Text(
-          categories[index],
-          style: TextStyle(
-            color: (index == selectedCategory) ? Colors.red : Colors.black,
-            fontFamily: 'Manrope',
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+        padding: EdgeInsets.only(
+            left: 16.0,
+            right: (index == categories.length - 1) ? 16.0 : 0,
+            top: 8),
+        child: Container(
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: (index == selectedCategory)
+                      ? BorderSide(color: Colors.red, width: 2.0)
+                      : BorderSide(color: Colors.transparent, width: 2.0))),
+          child: Text(
+            categories[index],
+            style: TextStyle(
+              color: (index == selectedCategory) ? Colors.red : Colors.grey,
+              fontFamily: 'CeraPro',
+              fontSize: 16,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
       ),
@@ -82,7 +99,7 @@ class _CategoriesListState extends State<CategoriesList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 46,
+        height: 36,
         child: ScrollablePositionedList.builder(
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,

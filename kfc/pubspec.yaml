@@ -48,25 +48,31 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   fonts:
-    - family: Manrope
+    - family: CeraPro
       fonts:
-        - asset: assets/fonts/Manrope-Bold.ttf
-        - asset: assets/fonts/Manrope-Medium.ttf
+        - asset: assets/fonts/CeraProBlack.otf
+        - asset: assets/fonts/CeraProBold.otf
+        - asset: assets/fonts/CeraProMedium.otf
+        - asset: assets/fonts/CeraProLight.otf
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - data/menu.json
 
-    - assets/navigation/basket_off.png
-    - assets/navigation/basket_off.png
-    - assets/navigation/menu_on.png
-    - assets/navigation/menu_off.png
-    - assets/navigation/coupons_off.png
-    - assets/navigation/coupons_on.png
-    - assets/navigation/restaurant_off.png
-    - assets/navigation/restaurant_on.png
-    
-    - assets/buttons/red_plus.png
+    - assets/images/navigation/basket_off.png
+    - assets/images/navigation/basket_on.png
+    - assets/images/navigation/menu_on.png
+    - assets/images/navigation/menu_off.png
+    - assets/images/navigation/coupons_off.png
+    - assets/images/navigation/coupons_on.png
+    - assets/images/navigation/restaurant_off.png
+    - assets/images/navigation/restaurant_on.png
+    - assets/images/navigation/person_off.png
+    - assets/images/navigation/person_on.png
+
+    - assets/images/buttons/red_plus.png
+
+    - assets/images/logo.png
 
   
   # assets:

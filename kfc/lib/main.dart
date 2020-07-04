@@ -15,71 +15,101 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      theme: CupertinoThemeData(brightness: Brightness.light),
-      home: 
-        CupertinoTabScaffold(
-          tabBar: CupertinoTabBar(
-            inactiveColor: Colors.black,
-            activeColor: Colors.red,
-            backgroundColor: Colors.white,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.home),
-                title: Text('Menu'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.tag),
-                title: Text('Coupons'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.location),
-                title: Text('Stores'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.shopping_cart),
-                title: Text('Cart'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person),
-                title: Text('My KFC'),
-              ),
-
-            ],
+    return MaterialApp(
+        home: CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        inactiveColor: Colors.black,
+        activeColor: Colors.red,
+        backgroundColor: Colors.white,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('assets/images/navigation/menu_off.png'),
+              height: 26,
+            ),
+            activeIcon: Image(
+              image: AssetImage('assets/images/navigation/menu_on.png'),
+              height: 26,
+            ),
+            title: Text('Меню'),
           ),
-          tabBuilder: (context, index) {
-            CupertinoTabView returnValue;
-            switch (index) {
-              case 0:
-                returnValue = CupertinoTabView(builder: (context) {
-                  return MenuScreen();
-                });
-                break;
-              case 1:
-                returnValue = CupertinoTabView(builder: (context) {
-                  return CouponsScreen();
-                });
-                break;
-              case 2:
-                returnValue = CupertinoTabView(builder: (context) {
-                  return StoresMapScreen();
-                });
-                break;
-              case 3:
-                returnValue = CupertinoTabView(builder: (context) {
-                  return CartScreen();
-                });
-                break;
-              case 4:
-                returnValue = CupertinoTabView(builder: (context) {
-                  return AuthScreen();
-                });
-                break;
-            
-            }
-            return returnValue;
-          },
-        )
-      );
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('assets/images/navigation/coupons_off.png'),
+              height: 26,
+            ),
+            activeIcon: Image(
+              image: AssetImage('assets/images/navigation/coupons_on.png'),
+              height: 26,
+            ),
+            title: Text('Купоны'),
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('assets/images/navigation/restaurant_off.png'),
+              height: 26,
+            ),
+            activeIcon: Image(
+              image: AssetImage('assets/images/navigation/restaurant_on.png'),
+              height: 26,
+            ),
+            title: Text('Рестораны'),
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('assets/images/navigation/basket_off.png'),
+              height: 26,
+            ),
+            activeIcon: Image(
+              image: AssetImage('assets/images/navigation/basket_on.png'),
+              height: 26,
+            ),
+            title: Text('Корзина'),
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('assets/images/navigation/person_off.png'),
+              height: 26,
+            ),
+            activeIcon: Image(
+              image: AssetImage('assets/images/navigation/person_on.png'),
+              height: 26,
+            ),
+            title: Text('My KFC'),
+          ),
+        ],
+      ),
+      tabBuilder: (context, index) {
+        CupertinoTabView returnValue;
+        switch (index) {
+          case 0:
+            returnValue = CupertinoTabView(builder: (context) {
+              return MenuScreen();
+            });
+            break;
+          case 1:
+            returnValue = CupertinoTabView(builder: (context) {
+              return CouponsScreen();
+            });
+            break;
+          case 2:
+            returnValue = CupertinoTabView(builder: (context) {
+              return StoresMapScreen();
+            });
+            break;
+          case 3:
+            returnValue = CupertinoTabView(builder: (context) {
+              return CartScreen();
+            });
+            break;
+          case 4:
+            returnValue = CupertinoTabView(builder: (context) {
+              return AuthScreen();
+            });
+            break;
+        }
+        return returnValue;
+      },
+    ));
   }
 }
